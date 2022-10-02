@@ -11,6 +11,14 @@ fn main() {
 }
 ```
 
+```py
+def main():
+    print("Hello World");
+
+if __name__ == "__main__":
+    main()  
+```
+
 ## Quote
 
 > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
