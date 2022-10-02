@@ -5,6 +5,8 @@ Modern and minimalistic blog theme powered by [Zola](getzola.org). See a live pr
 
 Forked from [apollo](https://github.com/not-matthias/apollo), and modified/extended with the inspiration and ideas from [Pascal's scribbles](https://deterministic.space/) and [xypnox's xyBlag](https://www.xypnox.com/blag/) theme.
 
+*Modified specifically for my own blog at https://jarp0l.github.io.*
+
 apolloX: apollo-extended
 
 apollo:
