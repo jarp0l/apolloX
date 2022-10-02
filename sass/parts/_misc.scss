@@ -3,7 +3,7 @@
 }
 
 .draft-label {
-  color: var(--hover-color);
+  color: var(--text-hover-color);
   text-decoration: none;
   padding: 2px 4px;
   border-radius: 4px;
@@ -13,13 +13,13 @@
 
 ::-moz-selection {
   background: var(--primary-color);
-  color: var(--hover-color);
+  color: var(--text-hover-color);
   text-shadow: none;
 }
 
 ::selection {
   background: var(--primary-color);
-  color: var(--hover-color);
+  color: var(--text-hover-color);
 }
 
 p {
@@ -40,14 +40,16 @@ blockquote {
 }
 
 a {
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 2.5px solid var(--primary-color);
   color: inherit;
   text-decoration: none;
+  padding: 0 1px;
 }
 
 a:hover {
   background-color: var(--primary-color);
-  color: var(--hover-color);
+  color: var(--text-hover-color);
+  padding: 0 1px;
 }
 
 time {
@@ -56,8 +58,58 @@ time {
 
 /* Remove post list padding */
 @media screen and (max-width: 600px) {
-  .list>ul {
+  .list > ul {
     margin: 0;
     padding: 0;
+  }
+}
+
+.toc li {
+  line-height: 2;
+}
+
+.zola-anchor,
+.taxonomies__item {
+  border-bottom: 1px solid var(--primary-color);
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+}
+
+.zola-anchor:hover,
+.taxonomies__item:hover {
+  border-bottom: 2px solid var(--primary-color);
+  background-color: var(--bg-0);
+  color: var(--text-0);
+  padding: 0;
+}
+
+.taxonomies__item {
+  span.count {
+    position: relative;
+    top: -7px;
+    right: 4px;
+  }
+
+  span.hashtag {
+    opacity: 0.5;
+  }
+}
+
+.taxonomies {
+  .page-header {
+    text-align: center;
+  }
+
+  ul {
+    display: inline-block;
+    margin: 25px 10px;
+    margin-bottom: 75px;
+
+    li {
+      display: inline-block;
+      margin: 0 25px;
+      padding: 5px 0;
+    }
   }
 }

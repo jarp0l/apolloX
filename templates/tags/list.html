@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block main_content %}
+<main>
+  <section class="body">
+    <div class="taxonomies">
+      <div class="page-header">
+        Tags<span style="font-size: 1.6em" class="primary-color">.</span>
+      </div>
+
+      <ul class="taxonomies__items">
+        {% for tag in terms %}
+        <li>
+          <a class="taxonomies__item" href="{{ tag.permalink }}">
+            <span class="hashtag">#</span>
+            {{ tag.name }}
+            <span class="count">{{ tag.pages | length }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+{% endblock main_content %}

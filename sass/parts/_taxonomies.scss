@@ -1,0 +1,30 @@
+.taxonomy {
+  margin: 2em 0;
+
+  .desc-heading {
+    margin-bottom: -1.5rem;
+    color: var(--secondary-color);
+    font-weight: normal;
+  }
+
+  h1 {
+    @include underline-static;
+  }
+
+  &__item {
+    margin: 2rem 0;
+    transition: 0.2s ease-out;
+
+    &__time {
+      color: var(--secondary-color);
+    }
+
+    &__title a {
+      font-weight: 600;
+      font-size: 1.5em;
+      color: var(--text-color);
+
+      // @include underline-from-center;
+    }
+  }
+}

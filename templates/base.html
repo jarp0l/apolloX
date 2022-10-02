@@ -1,10 +1,28 @@
-{% import "macros/macros.html" as post_macros %}
+{% import "macros/macros.html" as macros %}
 
 <!DOCTYPE html>
 <html>
 {% include "partials/header.html" %}
 
 <body>
+    {# For dark theme init #}
+    <script>
+        (function initTheme() {
+            let body = document.getElementsByTagName("body")[0];
+            if (window.localStorage.getItem("theme") !== null) {
+                if (window.localStorage.getItem("theme") === "dark") {
+                    body.setAttribute("data-theme", "dark");
+                } else {
+                    body.setAttribute("data-theme", "light");
+                }
+            } else {
+                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    body.setAttribute("data-theme", "dark");
+                }
+            }
+        })();
+    </script>
+
     <div class="content">
         {% include "partials/nav.html" %}
 
@@ -12,7 +30,13 @@
         {% block main_content %}
             Nothing here?!
         {% endblock main_content %}
+
+        {% include "partials/footer.html" %}
     </div>
+
+    {% block js_body %}
+        <script src="{{ get_url(path="js/main.js", trailing_slash=false) }}" type="text/javascript"></script>
+    {% endblock js_body %}
 </body>
 
 </html>
